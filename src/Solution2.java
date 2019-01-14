@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * <br>
  * <p>
@@ -17,34 +21,45 @@
  * @date 2019/1/7 19:05
  */
 public class Solution2 {
-    public static void main(String[] args) {
 
+
+    public static void main(String[] args) {
+//        ListNode l1 = CommonUtils.createListNode(new int[]{2, 4, 3});
+//        ListNode l2 = CommonUtils.createListNode(new int[]{5, 6, 4});
+        ListNode l1 = CommonUtils.createListNode(new int[]{5});
+        ListNode l2 = CommonUtils.createListNode(new int[]{5});
+        ListNode resNode = addTwoNumbers(l1, l2);
+        CommonUtils.printListNode(resNode);
+//
+//        System.out.println(Arrays.toString(sNumList.toArray()));
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if (l1 != null && l2 != null) {
-            int tmp = l1.val + l2.val;
-            int carry = 0;
-            if (tmp > 9) {
-                carry = 1;
-                tmp = tmp - 9;
-            } else {
-                carry = 0;
-            }
-            ListNode resListNode = new ListNode(tmp);
-
-
-        }
-
-        throw new IllegalArgumentException("no such solution!");
+        return addTwoNumbers(l1, l2, 0);
     }
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2, int carry) {
+        int num1 = 0;
+        int num2 = 0;
+        ListNode l1Next = null;
+        ListNode l2Next = null;
+        if (l1 != null) {
+            num1 = l1.val;
+            l1Next = l1.next;
         }
+        if (l2 != null) {
+            num2 = l2.val;
+            l2Next = l2.next;
+        }
+        int tmp = num1 + num2 + carry;
+        if (tmp > 9) {
+            carry = 1;
+            tmp = tmp - 10;
+        } else {
+            carry = 0;
+        }
+        ListNode listNode = new ListNode(tmp);
+        listNode.next = addTwoNumbers(l1.next, l2.next, carry);
+        return listNode;
     }
 }
