@@ -6,6 +6,7 @@ import java.util.Map;
  * <br>
  * <p>
  * {@link Solution1}
+ * Two Sum  easy
  * <p>
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  * <p>
