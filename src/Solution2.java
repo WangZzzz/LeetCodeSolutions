@@ -59,7 +59,10 @@ public class Solution2 {
             carry = 0;
         }
         ListNode listNode = new ListNode(tmp);
-        listNode.next = addTwoNumbers(l1.next, l2.next, carry);
+        //递归调用，当下个节点中某一个不为空，或者进位不为空时，递归
+        if (l1Next != null || l2Next != null || carry != 0) {
+            listNode.next = addTwoNumbers(l1Next, l2Next, carry);
+        }
         return listNode;
     }
 }
