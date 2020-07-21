@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package leetcode;
 
 /**
  * <br>
@@ -25,8 +23,8 @@ public class Solution2 {
 
 
     public static void main(String[] args) {
-//        ListNode l1 = CommonUtils.createListNode(new int[]{2, 4, 3});
-//        ListNode l2 = CommonUtils.createListNode(new int[]{5, 6, 4});
+//        leetcode.ListNode l1 = leetcode.CommonUtils.createListNode(new int[]{2, 4, 3});
+//        leetcode.ListNode l2 = leetcode.CommonUtils.createListNode(new int[]{5, 6, 4});
         ListNode l1 = CommonUtils.createListNode(new int[]{5});
         ListNode l2 = CommonUtils.createListNode(new int[]{5});
         ListNode resNode = addTwoNumbers(l1, l2);

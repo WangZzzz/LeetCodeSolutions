@@ -1,6 +1,6 @@
-import jdk.nashorn.internal.ir.LiteralNode;
+package leetcode;
 
-import java.util.List;
+import java.security.SecureRandom;
 
 public class CommonUtils {
 
@@ -37,5 +37,14 @@ public class CommonUtils {
             return rootNode;
         }
         return null;
+    }
+
+    public static int[] createTestArray(int n) {
+        SecureRandom random = new SecureRandom((System.currentTimeMillis() + "").getBytes());
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
+            array[i] = random.nextInt(n * 50);
+        }
+        return array;
     }
 }
