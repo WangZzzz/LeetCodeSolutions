@@ -57,7 +57,13 @@ public class CommonUtils {
         SecureRandom random = new SecureRandom((System.currentTimeMillis() + "").getBytes());
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
-            array[i] = random.nextInt(n * 50);
+            int tmp = random.nextInt(10);
+            if (1 == tmp || 3 == tmp || 5 == tmp || 7 == tmp) {
+                array[i] = random.nextInt(n * 50);
+            } else {
+                array[i] = -random.nextInt(n * 50);
+            }
+
         }
         return array;
     }
