@@ -1,0 +1,40 @@
+package old.Other;
+
+import java.util.Arrays;
+
+/*
+ * 	�ַ�������ȫ����
+ */
+public class AllSortDemo2 {
+
+    public static void main(String[] args) {
+        String[] arr = {"3", "32", "321"};
+        AllSort(arr, 0, arr.length - 1);
+    }
+
+    public static void AllSort(String[] arr, int start, int end) {
+        if (start == end) {
+            printArr(arr);
+        } else {
+            for (int i = start; i <= end; i++) {
+                String tmp = arr[start];
+                arr[start] = arr[i];
+                arr[i] = tmp;
+
+                AllSort(arr, start + 1, end);
+
+                tmp = arr[start];
+                arr[start] = arr[i];
+                arr[i] = tmp;
+            }
+        }
+    }
+
+    public static void printArr(String[] arr) {
+        String tmp = "";
+        for (String str : arr) {
+            tmp += str;
+        }
+        System.out.println(tmp);
+    }
+}

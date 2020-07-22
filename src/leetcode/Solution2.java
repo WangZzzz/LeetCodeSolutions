@@ -1,5 +1,8 @@
 package leetcode;
 
+import util.CommonUtils;
+import util.ListNode;
+
 /**
  * <br>
  * <p>
@@ -23,8 +26,8 @@ public class Solution2 {
 
 
     public static void main(String[] args) {
-//        leetcode.ListNode l1 = leetcode.CommonUtils.createListNode(new int[]{2, 4, 3});
-//        leetcode.ListNode l2 = leetcode.CommonUtils.createListNode(new int[]{5, 6, 4});
+//        util.ListNode l1 = util.CommonUtils.createListNode(new int[]{2, 4, 3});
+//        util.ListNode l2 = util.CommonUtils.createListNode(new int[]{5, 6, 4});
         ListNode l1 = CommonUtils.createListNode(new int[]{5});
         ListNode l2 = CommonUtils.createListNode(new int[]{5});
         ListNode resNode = addTwoNumbers(l1, l2);

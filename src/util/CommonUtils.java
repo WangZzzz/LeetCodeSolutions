@@ -1,4 +1,4 @@
-package leetcode;
+package util;
 
 import java.security.SecureRandom;
 
@@ -22,6 +22,20 @@ public class CommonUtils {
                 System.out.println();
             }
         }
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        if (arr == null || arr.length == 0) {
+            return;
+        }
+
+        if (i < 0 || i > arr.length - 1 || j < 0 || j > arr.length - 1) {
+            return;
+        }
+
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
 

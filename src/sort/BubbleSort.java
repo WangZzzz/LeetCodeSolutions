@@ -1,6 +1,6 @@
 package sort;
 
-import leetcode.CommonUtils;
+import util.CommonUtils;
 
 import java.util.Arrays;
 
